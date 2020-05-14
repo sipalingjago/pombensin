@@ -124,7 +124,7 @@ class Pengaturan extends Back_controller {
 				 $sub_array[] = $row->jadwal_shift;
 				 $sub_array[] = $row->nama;
 				 $sub_array[] = $row->email;
-				 $sub_array[] = $row->password;
+				 $sub_array[] = "*******";
 				 $sub_array[] = $row->hak_akses==1?"<span class='badge badge-success'>Admin</span>":"<span class='badge badge-primary'>User</span>";
 				 $sub_array[] = $row->status==1?"<span class='badge badge-success'>Aktif</span>":"<span class='badge badge-danger'>Nonaktif</span>";
 				 $sub_array[] = '<a href="'.site_url($this->url.'/edit/'.$row->id).'" class="btn btn-info btn-xs update">Edit</a>
