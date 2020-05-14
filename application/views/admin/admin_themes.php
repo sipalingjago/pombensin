@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>assets/alertifyjs/css/alertify.min.css" rel="stylesheet" >
+	<link href="<?php echo base_url(); ?>assets/alertifyjs/css/themes/default.min.css" rel="stylesheet" >
 
 	<script src="<?php echo base_url(); ?>assets/adminlte/plugins/jquery/jquery.min.js"></script>
 	<!-- Bootstrap -->
@@ -44,6 +46,7 @@
 	<script src="<?php echo base_url(); ?>assets/adminlte/plugins/jquery-mapael/maps/usa_states.min.js"></script>
 	<!-- ChartJS -->
 	<script src="<?php echo base_url(); ?>assets/adminlte/plugins/chart.js/Chart.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/alertifyjs/alertify.min.js"></script>
 
 	<!-- PAGE SCRIPTS -->
 	<script src="<?php echo base_url(); ?>assets/adminlte/dist/js/pages/dashboard2.js"></script>
