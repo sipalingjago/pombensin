@@ -8,7 +8,7 @@ class Dashboard extends Back_controller {
 
 		$cek = $this->session->userdata('hak_akses');
 		if(!($cek)) {
-			redirect('Datacenter');
+			redirect('Auth');
 		}
 
 	}
