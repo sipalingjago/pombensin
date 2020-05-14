@@ -49,7 +49,7 @@ class Auth extends Back_controller {
 					$this->session->set_userdata($data);
 
 					$this->alert_info_asslamualaikum('Selamat Datang. Anda Masuk sebagai User');
-
+					// echo "zz";exit;
 					redirect('Dashboard');
 
 				} else {

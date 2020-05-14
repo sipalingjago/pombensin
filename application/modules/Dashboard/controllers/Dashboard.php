@@ -6,7 +6,7 @@ class Dashboard extends Back_controller {
 
 		parent::__construct();
 
-		$cek = $this->session->userdata('hak_akses');
+		$cek = $this->session->userdata('logged_in');
 		if(!($cek)) {
 			redirect('Auth');
 		}

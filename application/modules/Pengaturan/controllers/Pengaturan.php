@@ -9,7 +9,7 @@ class Pengaturan extends Back_controller {
 
 		parent::__construct();
 		$this->load->model('Mpengaturan', 'mdl');
-		$cek = $this->session->userdata('hak_akses');
+		$cek = $this->session->userdata('logged_in');
 		if(!($cek)) {
 			redirect('Auth');
 		}
@@ -85,6 +85,7 @@ class Pengaturan extends Back_controller {
 		$post = $this->input->post();
 		$pass = $post['password'];
 		if(!$pass) {
+			unset($post['password']);
 			$query = $this->mdl->update_data($post, $post['id']);
 		} else {
 			unset($post['password']);
