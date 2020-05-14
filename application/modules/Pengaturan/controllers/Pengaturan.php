@@ -83,8 +83,18 @@ class Pengaturan extends Back_controller {
 	function update() {
 
 		$post = $this->input->post();
+		$pass = $post['password'];
+		if(!$pass) {
+			$query = $this->mdl->update_data($post, $post['id']);
+		} else {
+			unset($post['password']);
+			$data = array(
+				'password' => md5($pass)
+			);
+			$merge = array_merge($post, $data);
+			$query = $this->mdl->update_data($merge, $post['id']);
+		}
 
-		$query = $this->mdl->update_data($post, $post['id']);
 
 		$query == true ? $this->alert_info('Berhasil Ubah Data') : $this->alert_error('Gagal Ubah Data');
 

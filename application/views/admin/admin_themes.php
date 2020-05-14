@@ -203,7 +203,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 					<li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link active">
+            <a href="<?php echo site_url('Dashboard'); ?>" class="nav-link <?php echo $subtitle=="Dashboard"?"active":""; ?>">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Beranda
@@ -211,7 +211,7 @@
             </a>
           </li>
 					<li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="<?php echo site_url('Laporan'); ?>" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Laporan
@@ -227,7 +227,7 @@
             </a>
           </li>
 					<li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="<?php echo site_url('Rekapan'); ?>" class="nav-link">
               <i class="nav-icon fas fa-list-alt"></i>
               <p>
                 Rekapan
