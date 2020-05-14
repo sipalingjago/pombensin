@@ -26,6 +26,15 @@
 
 	<!-- OPTIONAL SCRIPTS -->
 	<script src="<?php echo base_url(); ?>assets/adminlte/dist/js/demo.js"></script>
+  <script src="<?php echo base_url(); ?>assets/adminlte/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="<?php echo base_url(); ?>assets/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- DataTables -->
+  <script src="<?php echo base_url(); ?>assets/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <!-- AdminLTE App -->
 
 	<!-- PAGE PLUGINS -->
 	<!-- jQuery Mapael -->
@@ -207,7 +216,7 @@
             </a>
           </li>
 					<li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="<?php echo site_url('Pengaturan'); ?>" class="nav-link <?php echo $subtitle=="Pengaturan"?"active":""; ?>">
               <i class="nav-icon fas fa-cog"></i>
               <p>
                 Pengaturan
