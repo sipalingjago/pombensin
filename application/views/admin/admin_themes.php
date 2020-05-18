@@ -242,7 +242,7 @@
               <li class="nav-item">
                 <a href="<?php echo site_url('Lokasi_pom'); ?>" class="nav-link <?php echo $subtitle=="Lokasi_pom"?"active":""; ?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Lokasi POM</p>
+                  <p>SPBU</p>
                 </a>
               </li>
               <li class="nav-item">
