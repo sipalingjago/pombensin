@@ -220,14 +220,14 @@
           </li>
           <li class="nav-item has-treeview
           <?php
-            if($subtitle == 'Pengaturan' || $subtitle == 'Lokasi_pom') {
+            if($subtitle == 'Pengaturan' || $subtitle == 'Lokasi_pom' || $subtitle == 'Jenis_bbm') {
               echo "menu-open";
             }
           ?>
           ">
             <a href="#" class="nav-link
             <?php
-              if($subtitle == 'Pengaturan' || $subtitle == 'Lokasi_pom') {
+              if($subtitle == 'Pengaturan' || $subtitle == 'Lokasi_pom' || $subtitle == 'Jenis_bbm') {
                 echo "active";
               }
             ?>
@@ -246,7 +246,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url(''); ?>" class="nav-link <?php echo $subtitle==""?"active":""; ?>">
+                <a href="<?php echo site_url('Jenis_bbm'); ?>" class="nav-link <?php echo $subtitle=="Jenis_bbm"?"active":""; ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Jenis BBM</p>
                 </a>

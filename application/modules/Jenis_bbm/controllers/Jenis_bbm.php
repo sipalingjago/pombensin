@@ -1,14 +1,14 @@
 <?php
 
-class Lokasi_pom extends Back_controller {
+class Jenis_bbm extends Back_controller {
 
-	public $judul = "Lokasi POM";
-	public $url = "Lokasi_pom";
+	public $judul = "Jenis BBM";
+	public $url = "Jenis_bbm";
 
 	function __construct() {
 
 		parent::__construct();
-		$this->load->model('Mlokasi_pom', 'mdl');
+		$this->load->model('Mjenis_bbm', 'mdl');
 		$cek = $this->session->userdata('logged_in');
 		if(!($cek)) {
 			redirect('Auth');
