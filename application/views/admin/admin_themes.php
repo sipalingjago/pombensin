@@ -218,13 +218,52 @@
               </p>
             </a>
           </li>
-					<li class="nav-item">
-            <a href="<?php echo site_url('Pengaturan'); ?>" class="nav-link <?php echo $subtitle=="Pengaturan"?"active":""; ?>">
+          <li class="nav-item has-treeview
+          <?php
+            if($subtitle == 'Pengaturan' || $subtitle == 'Lokasi_pom') {
+              echo "menu-open";
+            }
+          ?>
+          ">
+            <a href="#" class="nav-link
+            <?php
+              if($subtitle == 'Pengaturan' || $subtitle == 'Lokasi_pom') {
+                echo "active";
+              }
+            ?>
+            ">
               <i class="nav-icon fas fa-cog"></i>
               <p>
                 Pengaturan
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo site_url('Lokasi_pom'); ?>" class="nav-link <?php echo $subtitle=="Lokasi_pom"?"active":""; ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lokasi POM</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url(''); ?>" class="nav-link <?php echo $subtitle==""?"active":""; ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Jenis BBM</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url(''); ?>" class="nav-link <?php echo $subtitle==""?"active":""; ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tangki</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('Pengaturan'); ?>" class="nav-link <?php echo $subtitle=="Pengaturan"?"active":""; ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>User</p>
+                </a>
+              </li>
+            </ul>
           </li>
 					<li class="nav-item">
             <a href="<?php echo site_url('Rekapan'); ?>" class="nav-link">

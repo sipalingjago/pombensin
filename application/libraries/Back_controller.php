@@ -15,6 +15,7 @@ class Back_Controller extends CI_Controller {
 
 		$data = array(
 				'title' 	=> $title,
+				'open'	=> "menu-open",
 				'subtitle'	=> $subtitle,
 				'content'	=> $content
 			);
