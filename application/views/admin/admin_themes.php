@@ -265,14 +265,44 @@
               </li>
             </ul>
           </li>
-					<li class="nav-item">
+          <li class="nav-item has-treeview
+          <?php
+            if($subtitle == 'Rekapan' || $subtitle == 'nozzel' ) {
+              echo "menu-open";
+            }
+          ?>
+          ">
+            <a href="#" class="nav-link
+            <?php
+              if($subtitle == 'Rekapan' || $subtitle == 'nozzel') {
+                echo "active";
+              }
+            ?>
+            ">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>
+                Rekapan
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo site_url('Rekapan'); ?>" class="nav-link <?php echo $subtitle=="Rekapan"?"active":""; ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Nozzel</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+					<!-- <li class="nav-item">
             <a href="<?php echo site_url('Rekapan'); ?>" class="nav-link">
               <i class="nav-icon fas fa-list-alt"></i>
               <p>
                 Rekapan
               </p>
             </a>
-          </li>
+          </li> -->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
