@@ -16,7 +16,11 @@ class Mpengaturan extends CI_Model {
 		return $this->db->get('lokasi_pom')->result();
 	
 	}
-
+	function get_jadwal_shift(){
+		$this->db->order_by('id', 'ASC');
+		return $this->db->get('jadwal_shift')->result();
+	
+	}
 
 	function cek_data($id) {
 		$this->db->where('id', $id);
@@ -35,8 +39,10 @@ class Mpengaturan extends CI_Model {
 
 	function make_query()
 	{
-		$this->db->select('admin.*, lokasi_pom.nama as nama_lokasi_pom')
-				 ->from("admin")->join('lokasi_pom', "lokasi_pom.id = admin.id_lokasi_pom")
+		$this->db->select('admin.*, lokasi_pom.nama as nama_lokasi_pom, jadwal_shift.nama as nama_jadwal_shift')
+				 ->from("admin")
+				 ->join('lokasi_pom', "lokasi_pom.id = admin.id_lokasi_pom")
+				 ->join("jadwal_shift", "jadwal_shift.id = admin.id_jadwal_shift")
 				 ->where('admin.hak_akses !=', 0);
 			 if(isset($_POST["search"]["value"]))
 			 {

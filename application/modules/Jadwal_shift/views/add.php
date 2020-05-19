@@ -27,47 +27,9 @@
           <form role="form" method="POST" action="<?php echo site_url($url.'/insert'); ?>">
             <div class="card-body">
               <div class="form-group">
-                <label for="exampleInputEmail1">Nama Tangki</label>
-                <select name="id_tangki" class="form-control">
-                <option value="">-</option>
-                <?php 
-                foreach($tangki as $row){
-                ?>
-                <option value="<?php echo $row->id; ?>"><?php echo $row->nama; ?></option>
-                <?php
-                }
-                ?>
-                </select>
+                <label for="exampleInputEmail1">Waktu</label>
+                <input type="text" name="nama" class="form-control" placeholder="(08.00-15.00)">
               </div>
-              
-              <div class="form-group">
-                <label for="exampleInputEmail1">Jadwal Shift</label>
-                <select name="id_jadwal_shift" class="form-control">
-                <option value="">-</option>
-                <?php 
-                foreach($jadwal_shift as $row){
-                ?>
-                <option value="<?php echo $row->id; ?>"><?php echo $row->nama; ?></option>
-                <?php
-                }
-                ?>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="exampleInputEmail1">Nama Nozzel</label>
-                <input name="nama" class="form-control" placeholder="nama Nozzel">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Teller Akhir</label>
-                <input name="teller_akhir" class="form-control" placeholder="99999999">
-              </div> 
-              
-              <div class="form-group">
-                <label for="exampleInputEmail1">Teller Awal</label>
-                <input name="teller_awal" class="form-control" placeholder="9999999">
-              </div>
-             
             </div>
             <!-- /.card-body -->
 

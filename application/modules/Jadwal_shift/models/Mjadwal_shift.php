@@ -1,56 +1,38 @@
 <?php
 
-class Mrekapan extends CI_Model {
+class Mjadwal_shift extends CI_Model {
 
 	function get_data() {
-		$this->db->order_by('id', 'ASC');
-		return $this->db->get('nozzel ')->result();
-	}
-
-	function insert_data($data) {
-		return $this->db->insert('nozzel ', $data);
-	}
-
-	function get_tangki(){
-		$this->db->order_by('id', 'ASC');
-		return $this->db->get('tangki')->result();
-	}
-
-	function get_jadwal_shift(){
 		$this->db->order_by('id', 'ASC');
 		return $this->db->get('jadwal_shift')->result();
 	}
 
-	function get_admin(){
-		$this->db->order_by('id', 'ASC');
-		$this->db->where('hak_akses !=', 0);
-		return $this->db->get('admin')->result();
+	function insert_data($data) {
+		return $this->db->insert('jadwal_shift', $data);
 	}
 
 	function cek_data($id) {
 		$this->db->where('id', $id);
-		return $this->db->get('nozzel ')->row();
+		return $this->db->get('jadwal_shift')->row();
 	}
 
 	function update_data($data, $id) {
 		$this->db->where('id', $id);
-		return $this->db->update('nozzel ', $data);
+		return $this->db->update('jadwal_shift', $data);
 	}
 
 	function delete_data($id) {
 		$this->db->where('id', $id);
-		return $this->db->delete('nozzel ');
+		return $this->db->delete('jadwal_shift');
 	}
 
 	function make_query()
 	{
-		$this->db->select('nozzel.*, tangki.nama as nama_tangki, jadwal_shift.nama as nama_jadwal_shift')
-				 ->from("nozzel")
-				 ->join("tangki", "tangki.id = nozzel.id_tangki")
-				 ->join("jadwal_shift", "jadwal_shift.id = nozzel.id_jadwal_shift");
+		$this->db->select('jadwal_shift.*')
+				 ->from("jadwal_shift");
 			 if(isset($_POST["search"]["value"]))
 			 {
-						$this->db->like("nozzel.nama", $_POST["search"]["value"]);
+						$this->db->like("nama", $_POST["search"]["value"]);
 						// $this->db->or_like("date", $_POST["search"]["value"]);
 			 }
 			 if(isset($_POST["order"]))
@@ -59,7 +41,7 @@ class Mrekapan extends CI_Model {
 			 }
 			 else
 			 {
-						$this->db->order_by('nozzel.id', 'DESC');
+						$this->db->order_by('id', 'DESC');
 			 }
 	}
 
@@ -82,7 +64,7 @@ class Mrekapan extends CI_Model {
 	function get_all_data()
 	{
 			 $this->db->select("*");
-			 $this->db->from("nozzel ");
+			 $this->db->from("jadwal_shift");
 			 return $this->db->count_all_results();
 	}
 

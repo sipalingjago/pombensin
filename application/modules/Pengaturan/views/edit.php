@@ -39,17 +39,18 @@
                 ?>
                 </select>
               </div>
+            
               <div class="form-group">
                 <label for="exampleInputEmail1">Jadwal Shift</label>
-                <input type="hidden" name="id" value="<?php echo $data->id; ?>" class="form-control">
-                <select class="form-control" name="jadwal_shift" required>
-                  <option value="">-</option>
-                  <option <?php echo $data->jadwal_shift=="06.00-09.00"?"selected":""; ?> value="06.00-09.00">06.00-09.00</option>
-                  <option <?php echo $data->jadwal_shift=="09.00-12.00"?"selected":""; ?> value="09.00-12.00">09.00-12.00</option>
-                  <option <?php echo $data->jadwal_shift=="12.00-15.00"?"selected":""; ?> value="12.00-15.00">12.00-15.00</option>
-                  <option <?php echo $data->jadwal_shift=="15.00-18.00"?"selected":""; ?> value="15.00-18.00">15.00-18.00</option>
-                  <option <?php echo $data->jadwal_shift=="18.00-21.00"?"selected":""; ?> value="18.00-21.00">18.00-21.00</option>
-                  <option <?php echo $data->jadwal_shift=="21.00-23.00"?"selected":""; ?> value="21.00-23.00">21.00-23.00</option>
+                <select name="id_jadwal_shift" class="form-control">
+                <option value="">-</option>
+                <?php 
+                foreach($jadwal_shift as $row){
+                ?>
+                <option <?php echo $row->id == $data->id_jadwal_shift ? "selected " : ""; ?>value="<?php echo $row->id; ?>"><?php echo $row->nama; ?></option>
+                <?php
+                }
+                ?>
                 </select>
               </div>
               <div class="form-group">

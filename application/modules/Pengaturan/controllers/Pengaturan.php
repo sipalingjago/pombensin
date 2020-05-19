@@ -38,6 +38,7 @@ class Pengaturan extends Back_controller {
 		$data_array['judul'] = $this->judul;
 		$data_array['url'] = $this->url;
 		$data_array['lokasi_pom'] = $this->mdl->get_lokasi_pom();
+		$data_array['jadwal_shift'] = $this->mdl->get_jadwal_shift();
 
 		$title = "Tambah Data ".$this->judul;
 		$subtitle = $this->url;
@@ -55,6 +56,7 @@ class Pengaturan extends Back_controller {
 		$data_array['url'] = $this->url;
 
 		$data_array['lokasi_pom'] = $this->mdl->get_lokasi_pom();
+		$data_array['jadwal_shift'] = $this->mdl->get_jadwal_shift();
 		$title = "Edit Data ".$this->judul;
 		$subtitle = $this->url;
 		$content = $this->load->view('edit.php', $data_array, true);
@@ -125,7 +127,7 @@ class Pengaturan extends Back_controller {
 				 $sub_array = array();
 				 $sub_array[] = $no++;
 				 $sub_array[] = $row->nama_lokasi_pom;
-				 $sub_array[] = $row->jadwal_shift;
+				 $sub_array[] = $row->nama_jadwal_shift;
 				 $sub_array[] = $row->nama;
 				 $sub_array[] = $row->email;
 				 $sub_array[] = "*******";

@@ -1,14 +1,14 @@
 <?php
 
-class Rekapan extends Back_controller {
+class Jadwal_shift extends Back_controller {
 
-	public $judul = "Nozzel";
-	public $url = "Rekapan";
+	public $judul = "Jadwal Shift";
+	public $url = "Jadwal_shift";
 
 	function __construct() {
 
 		parent::__construct();
-		$this->load->model('Mrekapan', 'mdl');
+		$this->load->model('Mjadwal_shift', 'mdl');
 		$cek = $this->session->userdata('logged_in');
 		if(!($cek)) {
 			redirect('Auth');
@@ -24,8 +24,6 @@ class Rekapan extends Back_controller {
 		$data_array['judul'] = $this->judul;
 		$data_array['url'] = $this->url;
 
-		$data_array['tangki'] = $this->mdl->get_tangki();
-		$data_array['jadwal_shift'] = $this->mdl->get_jadwal_shift();
 		$title = "Data ".$this->judul;
 		$subtitle = $this->url;
 		$content = $this->load->view('list.php', $data_array, true);
@@ -38,8 +36,6 @@ class Rekapan extends Back_controller {
 
 		$data_array = array();
 		$data_array['judul'] = $this->judul;
-		$data_array['tangki'] = $this->mdl->get_tangki();
-		$data_array['jadwal_shift'] = $this->mdl->get_jadwal_shift();
 		$data_array['url'] = $this->url;
 
 		$title = "Tambah Data ".$this->judul;
@@ -55,8 +51,6 @@ class Rekapan extends Back_controller {
 		$data_array = array();
 		$data_array['judul'] = $this->judul;
 		$data_array['data']	= $this->mdl->cek_data($id);
-		$data_array['tangki'] = $this->mdl->get_tangki();
-		$data_array['jadwal_shift'] = $this->mdl->get_jadwal_shift();
 		$data_array['url'] = $this->url;
 
 		$title = "Edit Data ".$this->judul;
@@ -108,12 +102,7 @@ class Rekapan extends Back_controller {
 		{
 				 $sub_array = array();
 				 $sub_array[] = $no++;
-				 $sub_array[] = $row->nama_jadwal_shift;
-				 $sub_array[] = $row->nama_tangki;
 				 $sub_array[] = $row->nama;
-				 $sub_array[] = $row->teller_akhir;
-				 $sub_array[] = $row->teller_awal;
-				 $sub_array[] = $row->teller_awal - $row->teller_akhir;
 				 $sub_array[] = '<a href="'.site_url($this->url.'/edit/'.$row->id).'" class="btn btn-info btn-xs update">Edit</a>
 				 <a href="'.site_url($this->url.'/hapus/'.$row->id).'" onclick="return confirm(\'Apakah Anda Yakin?\')" class="btn btn-danger btn-xs delete">Delete</a>';
 				 $data[] = $sub_array;

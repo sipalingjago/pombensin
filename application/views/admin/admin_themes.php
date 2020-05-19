@@ -220,14 +220,14 @@
           </li>
           <li class="nav-item has-treeview
           <?php
-            if($subtitle == 'Pengaturan' || $subtitle == 'Lokasi_pom' || $subtitle == 'Jenis_bbm' | $subtitle== "Tangki") {
+            if($subtitle == 'Pengaturan' || $subtitle == 'Lokasi_pom' || $subtitle == 'Jenis_bbm' | $subtitle== "Tangki" || $subtitle =="Jadwal_shift") {
               echo "menu-open";
             }
           ?>
           ">
             <a href="#" class="nav-link
             <?php
-              if($subtitle == 'Pengaturan' || $subtitle == 'Lokasi_pom' || $subtitle == 'Jenis_bbm' || $subtitle== "Tangki") {
+              if($subtitle == 'Pengaturan' || $subtitle == 'Lokasi_pom' || $subtitle == 'Jenis_bbm' || $subtitle== "Tangki"|| $subtitle =="Jadwal_shift") {
                 echo "active";
               }
             ?>
@@ -263,6 +263,13 @@
                   <p>User</p>
                 </a>
               </li>
+              
+              <li class="nav-item">
+                <a href="<?php echo site_url('Jadwal_shift'); ?>" class="nav-link <?php echo $subtitle=="Jadwal_shift"?"active":""; ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Jadwal Shift</p>
+                </a>
+              </li>
             </ul>
           </li>
           <li class="nav-item has-treeview
@@ -279,7 +286,7 @@
               }
             ?>
             ">
-              <i class="nav-icon fas fa-cog"></i>
+              <i class="nav-icon fas fa-list-alt"></i>
               <p>
                 Rekapan
                 <i class="right fas fa-angle-left"></i>

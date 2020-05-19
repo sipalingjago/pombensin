@@ -19,7 +19,7 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Data Penjualan</h3>
+          <h3 class="card-title">Data <?php echo $judul; ?></h3>
           <div class="card-tools">
             <a class="btn btn-tool" href="<?php echo site_url($url.'/add'); ?>">
               <i class="fas fa-plus"></i> Tambah Data
@@ -32,27 +32,10 @@
             <thead>
             <tr>
               <th width="2%">No.</th>
-              <th>jadwal_shift</th>
-              <th>Despenser</th>
-              <th>Jenis Nozzel</th>
-              <th>Teller Akhir</th>
-              <th>Teller Awal</th>
-              <th>Penjualan</th>
+              <th>Waktu</th>
               <th width="12%">#</th>
             </tr>
             </thead>
-            <tfoot>
-              <tr>
-                <td>Total</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tfoot>
           </table>
         </div>
         <!-- /.card-body -->
@@ -81,7 +64,7 @@ $(document).ready(function(){
        },
        "columnDefs":[
             {
-                 "targets":[0, 1, 2,3],
+                 "targets":[0, 1, 2],
                  "orderable":false,
             },
        ],

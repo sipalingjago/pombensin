@@ -43,13 +43,13 @@
               </div>
               
               <div class="form-group">
-                <label for="exampleInputEmail1">Nama Petugas</label>
+                <label for="exampleInputEmail1">Jadwal Shift</label>
                 <select name="id_admin" class="form-control">
                 <option value="">-</option>
                 <?php 
-                foreach($admin as $row){
+                foreach($jadwal_shift as $row){
                 ?>
-                <option <?php echo $row->id == $data->id_admin ? "selected" : "";  ?> value="<?php echo $row->id; ?>"><?php echo $row->nama; ?></option>
+                <option <?php echo $row->id == $data->id_jadwal_shift ? "selected" : "";  ?> value="<?php echo $row->id; ?>"><?php echo $row->nama; ?></option>
                 <?php
                 }
                 ?>
