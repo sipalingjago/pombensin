@@ -25,6 +25,7 @@
 		<!-- form start -->
           <?php echo $this->session->flashdata('message'); ?>
 		  <div class="box-body">
+	
 			<div class="form-group">
 			  <label for="exampleInputEmail1">Nama</label>
 			  <input type="text" name="nama" value="<?php echo $this->session->flashdata('nama'); ?>" class="form-control" placeholder="Nama" required>

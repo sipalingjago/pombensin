@@ -1,46 +1,44 @@
 <?php
 
-class Mpengaturan extends CI_Model {
+class Mtangki extends CI_Model {
 
 	function get_data() {
 		$this->db->order_by('id', 'ASC');
-		return $this->db->get('admin')->result();
+		return $this->db->get('tangki')->result();
 	}
 
 	function insert_data($data) {
-		return $this->db->insert('admin', $data);
+		return $this->db->insert('tangki', $data);
 	}
 
-	function get_lokasi_pom(){
+	function get_jenis_bbm(){
 		$this->db->order_by('id', 'ASC');
-		return $this->db->get('lokasi_pom')->result();
-	
+		return $this->db->get('jenis_bbm')->result();
 	}
-
 
 	function cek_data($id) {
 		$this->db->where('id', $id);
-		return $this->db->get('admin')->row();
+		return $this->db->get('tangki')->row();
 	}
 
 	function update_data($data, $id) {
 		$this->db->where('id', $id);
-		return $this->db->update('admin', $data);
+		return $this->db->update('tangki', $data);
 	}
 
 	function delete_data($id) {
 		$this->db->where('id', $id);
-		return $this->db->delete('admin');
+		return $this->db->delete('tangki');
 	}
 
 	function make_query()
 	{
-		$this->db->select('admin.*, lokasi_pom.nama as nama_lokasi_pom')
-				 ->from("admin")->join('lokasi_pom', "lokasi_pom.id = admin.id_lokasi_pom")
-				 ->where('admin.hak_akses !=', 0);
+		$this->db->select('tangki.*, jenis_bbm.nama as jenis_bbm')
+				 ->from("tangki")
+				 ->join("jenis_bbm", "jenis_bbm.id=tangki.id_jenis_bbm");
 			 if(isset($_POST["search"]["value"]))
 			 {
-						$this->db->like("admin.nama", $_POST["search"]["value"]);
+						$this->db->like("tangki.nama", $_POST["search"]["value"]);
 						// $this->db->or_like("date", $_POST["search"]["value"]);
 			 }
 			 if(isset($_POST["order"]))
@@ -49,7 +47,7 @@ class Mpengaturan extends CI_Model {
 			 }
 			 else
 			 {
-						$this->db->order_by('admin.id', 'DESC');
+						$this->db->order_by('tangki.id', 'DESC');
 			 }
 	}
 
@@ -72,7 +70,7 @@ class Mpengaturan extends CI_Model {
 	function get_all_data()
 	{
 			 $this->db->select("*");
-			 $this->db->from("admin");
+			 $this->db->from("tangki");
 			 return $this->db->count_all_results();
 	}
 

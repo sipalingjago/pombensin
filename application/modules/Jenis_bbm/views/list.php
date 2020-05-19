@@ -31,11 +31,9 @@
           <table id="user_data" class="table table-bordered table-striped">
             <thead>
             <tr>
-              <th width="2%">No.</th>
-              <th>Nama</th>
-              <th>Alamat</th>
-              <th>Kontak</th>
-              <th width="12%">#</th>
+              <th width="4%">No.</th>
+              <th>Nama Jenis BBM</th>
+              <th width="20%">#</th>
             </tr>
             </thead>
           </table>
@@ -66,7 +64,7 @@ $(document).ready(function(){
        },
        "columnDefs":[
             {
-                 "targets":[0, 1, 2,3],
+                 "targets":[0, 1, 2],
                  "orderable":false,
             },
        ],

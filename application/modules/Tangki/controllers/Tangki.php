@@ -1,14 +1,14 @@
 <?php
 
-class Jenis_bbm extends Back_controller {
+class Tangki extends Back_controller {
 
-	public $judul = "Jenis BBM";
-	public $url = "Jenis_bbm";
+	public $judul = "Tangki";
+	public $url = "Tangki";
 
 	function __construct() {
 
 		parent::__construct();
-		$this->load->model('Mjenis_bbm', 'mdl');
+		$this->load->model('Mtangki', 'mdl');
 		$cek = $this->session->userdata('logged_in');
 		if(!($cek)) {
 			redirect('Auth');
@@ -36,6 +36,7 @@ class Jenis_bbm extends Back_controller {
 
 		$data_array = array();
 		$data_array['judul'] = $this->judul;
+		$data_array['jenis_bbm'] = $this->mdl->get_jenis_bbm();
 		$data_array['url'] = $this->url;
 
 		$title = "Tambah Data ".$this->judul;
@@ -51,6 +52,7 @@ class Jenis_bbm extends Back_controller {
 		$data_array = array();
 		$data_array['judul'] = $this->judul;
 		$data_array['data']	= $this->mdl->cek_data($id);
+		$data_array['jenis_bbm'] = $this->mdl->get_jenis_bbm();
 		$data_array['url'] = $this->url;
 
 		$title = "Edit Data ".$this->judul;
@@ -102,6 +104,7 @@ class Jenis_bbm extends Back_controller {
 		{
 				 $sub_array = array();
 				 $sub_array[] = $no++;
+				 $sub_array[] = $row->jenis_bbm;
 				 $sub_array[] = $row->nama;
 				 $sub_array[] = '<a href="'.site_url($this->url.'/edit/'.$row->id).'" class="btn btn-info btn-xs update">Edit</a>
 				 <a href="'.site_url($this->url.'/hapus/'.$row->id).'" onclick="return confirm(\'Apakah Anda Yakin?\')" class="btn btn-danger btn-xs delete">Delete</a>';

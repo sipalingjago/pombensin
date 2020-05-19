@@ -1,35 +1,35 @@
 <?php
 
-class Mlokasi_pom extends CI_Model {
+class Mjenis_bbm extends CI_Model {
 
 	function get_data() {
 		$this->db->order_by('id', 'ASC');
-		return $this->db->get('lokasi_pom')->result();
+		return $this->db->get('jenis_bbm')->result();
 	}
 
 	function insert_data($data) {
-		return $this->db->insert('lokasi_pom', $data);
+		return $this->db->insert('jenis_bbm', $data);
 	}
 
 	function cek_data($id) {
 		$this->db->where('id', $id);
-		return $this->db->get('lokasi_pom')->row();
+		return $this->db->get('jenis_bbm')->row();
 	}
 
 	function update_data($data, $id) {
 		$this->db->where('id', $id);
-		return $this->db->update('lokasi_pom', $data);
+		return $this->db->update('jenis_bbm', $data);
 	}
 
 	function delete_data($id) {
 		$this->db->where('id', $id);
-		return $this->db->delete('lokasi_pom');
+		return $this->db->delete('jenis_bbm');
 	}
 
 	function make_query()
 	{
-		$this->db->select('lokasi_pom.*')
-				 ->from("lokasi_pom");
+		$this->db->select('jenis_bbm.*')
+				 ->from("jenis_bbm");
 			 if(isset($_POST["search"]["value"]))
 			 {
 						$this->db->like("nama", $_POST["search"]["value"]);
@@ -64,7 +64,7 @@ class Mlokasi_pom extends CI_Model {
 	function get_all_data()
 	{
 			 $this->db->select("*");
-			 $this->db->from("lokasi_pom");
+			 $this->db->from("jenis_bbm");
 			 return $this->db->count_all_results();
 	}
 

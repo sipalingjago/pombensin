@@ -27,26 +27,11 @@
           <form role="form" method="POST" action="<?php echo site_url($url.'/update'); ?>">
             <div class="card-body">
               <div class="form-group">
-                <label for="exampleInputEmail1">Nama POM</label>
+                <label for="exampleInputEmail1">Nama BBM</label>
                 <input type="hidden" name="id" value="<?php echo $data->id; ?>" class="form-control">
                 <input type="text" name="nama" value="<?php echo $data->nama; ?>" class="form-control" placeholder="Nama POM">
               </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Alamat</label>
-                <textarea name="alamat" class="form-control" placeholder="Alamat"><?php echo $data->alamat; ?></textarea>
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Kontak</label>
-                <input type="text" name="kontak" value="<?php echo $data->kontak; ?>" class="form-control" placeholder="Kontak">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Lat</label>
-                <input type="text" name="lat" value="<?php echo $data->lat; ?>" class="form-control" placeholder="Lat">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Long</label>
-                <input type="text" name="long" value="<?php echo $data->long; ?>" class="form-control" placeholder="Long">
-              </div>
+             
             </div>
             <!-- /.card-body -->
 

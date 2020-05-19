@@ -19,7 +19,6 @@ class Users extends Back_controller {
 		$data_array = array();
 
 		$data_array['data']	= $this->mdl->get_data();
-
 		$title = "Users";
 		$subtitle = "user";
 		$content = $this->load->view('list.php', $data_array, true);

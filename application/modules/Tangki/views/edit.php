@@ -3,13 +3,13 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1><?php echo $judul; ?> <small style="font-size: 12px;">Tambah</small></h1>
+        <h1><?php echo $judul; ?> <small style="font-size: 12px;">Edit</small></h1>
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="<?php echo site_url('Dashboard'); ?>">Home</a></li>
           <li class="breadcrumb-item"><a href="<?php echo site_url($url); ?>"><?php echo $judul; ?></a></li>
-          <li class="breadcrumb-item active">Tambah</li>
+          <li class="breadcrumb-item active">Edit</li>
         </ol>
       </div>
     </div>
@@ -20,17 +20,30 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Tambah Data <?php echo $judul; ?></h3>
+          <h3 class="card-title">Edit Data <?php echo $judul; ?></h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-          <form role="form" method="POST" action="<?php echo site_url($url.'/insert'); ?>">
+          <form role="form" method="POST" action="<?php echo site_url($url.'/update'); ?>">
             <div class="card-body">
               <div class="form-group">
-                <label for="exampleInputEmail1">Nama BBM</label>
-                <input type="text" name="nama" class="form-control" placeholder="Nama BBM">
+                <label for="exampleInputEmail1">Jenis BBM</label>
+                <input type="hidden" name="id" value="<?php echo $data->id; ?>" class="form-control">
+                <select name="id_jenis_bbm" class="form-control">
+                <option value="">-</option>
+                <?php 
+                foreach($jenis_bbm as $row){
+                ?>
+                <option <?php echo $row->id == $data->id_jenis_bbm ? "selected" : ""; ?> value="<?php echo $row->id; ?>"><?php echo $row->nama; ?></option>
+                <?php
+                }
+                ?>
+                </select>
               </div>
-              
+              <div class="form-group">
+                <label for="exampleInputEmail1">Nama Tangki</label>
+                <input name="nama" class="form-control" value="<?php echo $data->nama;?>" placeholder="nama Tangki">
+              </div>
             </div>
             <!-- /.card-body -->
 

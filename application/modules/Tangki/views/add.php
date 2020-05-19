@@ -27,10 +27,24 @@
           <form role="form" method="POST" action="<?php echo site_url($url.'/insert'); ?>">
             <div class="card-body">
               <div class="form-group">
-                <label for="exampleInputEmail1">Nama BBM</label>
-                <input type="text" name="nama" class="form-control" placeholder="Nama BBM">
+                <label for="exampleInputEmail1">Jenis BBM</label>
+                <select name="id_jenis_bbm" class="form-control">
+                <option value="">-</option>
+                <?php 
+                foreach($jenis_bbm as $row){
+                ?>
+                <option value="<?php echo $row->id; ?>"><?php echo $row->nama; ?></option>
+                <?php
+                }
+                ?>
+                </select>
               </div>
-              
+              <div class="form-group">
+                <label for="exampleInputEmail1">Nama Tangki</label>
+                <input name="nama" class="form-control" placeholder="nama Tangki">
+              </div>
+           
+             
             </div>
             <!-- /.card-body -->
 

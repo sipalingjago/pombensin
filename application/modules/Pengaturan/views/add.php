@@ -26,6 +26,19 @@
         <div class="card-body">
           <form role="form" method="POST" action="<?php echo site_url($url.'/insert'); ?>">
             <div class="card-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Lokasi POM</label>
+                <select name="id_lokasi_pom" class="form-control">
+                <option value="">-</option>
+                <?php 
+                foreach($lokasi_pom as $row){
+                ?>
+                <option value="<?php echo $row->id; ?>"><?php echo $row->nama; ?></option>
+                <?php
+                }
+                ?>
+                </select>
+              </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Jadwal Shift</label>
                 <select class="form-control" name="jadwal_shift" required>

@@ -19,7 +19,7 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Data Pengaturan</h3>
+          <h3 class="card-title">Data <?php echo $judul; ?></h3>
           <div class="card-tools">
             <a class="btn btn-tool" href="<?php echo site_url($url.'/add'); ?>">
               <i class="fas fa-plus"></i> Tambah Data
@@ -31,15 +31,10 @@
           <table id="user_data" class="table table-bordered table-striped">
             <thead>
             <tr>
-              <th>No.</th>
-              <th>Lokasi POM</th>
-              <th>Jadwal Shift</th>
-              <th>Nama</th>
-              <th>Email</th>
-              <th>Password</th>
-              <th>Hak Akses</th>
-              <th>Status</th>
-              <th>#</th>
+              <th width="2%">No.</th>
+              <th>Jenis BBM</th>
+              <th>Nama Tangki</th>
+              <th width="12%">#</th>
             </tr>
             </thead>
           </table>
