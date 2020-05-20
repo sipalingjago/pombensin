@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Pertamina Sumbawa</title>
+  <title>Pertamina Sumbawaaaaaa</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/plugins/fontawesome-free/css/all.min.css">
@@ -263,7 +263,7 @@
                   <p>User</p>
                 </a>
               </li>
-              
+
               <li class="nav-item">
                 <a href="<?php echo site_url('Jadwal_shift'); ?>" class="nav-link <?php echo $subtitle=="Jadwal_shift"?"active":""; ?>">
                   <i class="far fa-circle nav-icon"></i>
@@ -299,7 +299,7 @@
                   <p>Nozzel</p>
                 </a>
               </li>
-              
+
             </ul>
           </li>
 					<!-- <li class="nav-item">
