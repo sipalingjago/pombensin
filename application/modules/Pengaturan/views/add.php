@@ -53,6 +53,7 @@
                 ?>
                 </select>
               </div>
+              
               <div class="form-group">
                 <label for="exampleInputEmail1">Nama</label>
                 <input type="text" name="nama" class="form-control" placeholder="Nama">
